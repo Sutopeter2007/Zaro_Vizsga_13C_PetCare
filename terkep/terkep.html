@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fbf6f2">
+
+    <title>PetCare – Térkép</title>
+    <link rel="stylesheet" href="terkep.css">
+    <script src="terkep.js" defer></script>
+</head>
+
+<body>
+
+    <!-- PETCARE OLDALSÓ NAVBAR -->
+
+    <aside class="sidebar" aria-label="Navigáció">
+
+     
+    <a class="nav-item" href="/fooldal/fooldal.html">
+        <span class="nav-icon">
+            <img src="/ikonok/white_home.png" alt="">
+        </span>
+        <span class="nav-label">Kezdőlap</span>
+    </a>
+    
+    <a class="nav-item" href="/terkep/terkep.html">
+        <span class="nav-icon">
+            <img src="/ikonok/white_map.png" alt="">
+        </span>
+        <span class="nav-label">Térkép</span>
+    </a>
+    
+    <a class="nav-item active" href="/tudastar/tudastar.html">
+        <span class="nav-icon">
+            <img src="/ikonok/white_book-bookmark.png" alt="">
+        </span>
+        <span class="nav-label">Tudástár</span>
+    </a>
+    
+
+    </aside>
+
+
+    <!-- OLDALTARTALOM -->
+
+    <main class="terkep-oldal">
+
+        <section class="bevezeto">
+
+            
+
+            <h1>Fedezd fel a környékeden lévő <span>Állatorvosokat!</span></h1>
+
+            <p>
+                Találd meg a közeledben található állatorvosi rendelőket.
+            </p>
+
+        </section>
+
+
+        <!-- TÉRKÉP -->
+
+        <section class="terkep-panel">
+
+            <div class="terkep-fejlec">
+
+                
+                <div class="terkep-keret">
+
+                    <iframe
+                        src="https://maps.google.com/maps?q=%C3%81llatorvosok%20Budapest&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        >
+                    </iframe>
+                
+                </div>
+        
+
+        </section>
+
+
+        <footer>
+            <img src="/fooldal/kepek_fooldal/Logo.png" alt="PetCare">
+        </footer>
+
+    </main>
+
+</body>
+</html>

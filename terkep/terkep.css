@@ -1,0 +1,293 @@
+
+:root {
+    --cream: #fbf6f2;
+    --ink: #260d0d;
+    --red: #cf202e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* OLDALSÓ NAVBAR */
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 9px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    z-index: 1000;
+
+    background: linear-gradient(180deg, #ad202e, #951d2a);
+    box-shadow: 3px 0 12px rgba(106, 24, 32, .08);
+
+    transition: width .25s ease, padding .25s ease;
+}
+
+.sidebar:hover,
+.sidebar:focus-within {
+    width: 226px;
+    padding: 22px 14px;
+}
+
+.nav-icon img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    display: block;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 72px;
+    min-width: 198px;
+}
+
+.nav-item {
+    width: 198px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 14px;
+    border-radius: 15px;
+    color: #f9e5e6;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: .22s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #c43a48;
+    color: white;
+}
+
+.nav-icon {
+    width: 27px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 23px;
+}
+
+.nav-label {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity .15s ease;
+}
+
+.sidebar:hover .nav-label,
+.sidebar:focus-within .nav-label {
+    opacity: 1;
+}
+
+.sidebar-paw {
+    margin-top: auto;
+    align-self: center;
+    font-size: 42px;
+    opacity: 0;
+    transition: opacity .15s ease;
+}
+
+.sidebar:hover .sidebar-paw,
+.sidebar:focus-within .sidebar-paw {
+    opacity: .25;
+}
+
+/* OLDAL */
+
+.terkep-oldal {
+    max-width: 1350px;
+    margin: auto;
+    padding: 65px 45px 30px;
+    margin-left: 9px;
+}
+
+.bevezeto {
+    margin-bottom: 38px;
+    animation: megjelenes .7s ease both;
+}
+
+.felirat {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.bevezeto h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.1;
+    margin: 18px 0;
+    letter-spacing: -2px;
+}
+
+.bevezeto h1 span {
+    color: var(--red);
+}
+
+.bevezeto p {
+    max-width: 650px;
+    color: #766565;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* TÉRKÉP PANEL */
+
+.terkep-panel {
+    background: #fffdfb;
+    border: 1px solid rgba(80, 30, 30, .08);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 12px 35px rgba(65, 25, 20, .05);
+    animation: megjelenes .8s ease both;
+}
+
+.terkep-fejlec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.terkep-fejlec h2 {
+    font-size: 21px;
+    margin: 0 0 7px;
+}
+
+.terkep-fejlec p {
+    color: #96827d;
+    font-size: 13px;
+    margin: 0;
+}
+
+.terkep-statusz {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #75625e;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.statusz-pont {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #39ae75;
+}
+
+/* IFRAME */
+
+.terkep-keret {
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #f1eae5;
+}
+
+.terkep-keret iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ALSÓ RÉSZ */
+
+.terkep-lablec {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 18px;
+    color: #9a8580;
+    font-size: 12px;
+}
+
+footer {
+    margin-top: 65px;
+    padding: 25px 0;
+    border-top: 1px solid #e9dcd5;
+}
+
+footer img {
+    width: 125px;
+}
+
+/* ANIMÁCIÓ */
+
+@keyframes megjelenes {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESZPONZÍV */
+
+@media (max-width: 760px) {
+
+    .sidebar:hover,
+    .sidebar:focus-within {
+        width: 205px;
+    }
+
+    .nav-item {
+        width: 177px;
+    }
+
+    .terkep-oldal {
+        padding: 35px 18px;
+    }
+
+    .terkep-panel {
+        padding: 15px;
+    }
+
+    .terkep-keret {
+        height: 450px;
+    }
+
+    .terkep-fejlec {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .terkep-lablec {
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

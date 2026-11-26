@@ -1,0 +1,483 @@
+
+:root {
+    --cream: #fbf6f2;
+    --ink: #260d0d;
+    --red: #cf202e;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  #csik {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(180deg, #8e252a, #a82b31);
+  }
+  
+  header {
+    position: absolute;
+    top: 17px;
+    left: 5%;
+    height: 52px;
+  }
+  
+  header img {
+    width: 166px;
+    height: auto;
+  }
+  
+  main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 112px 5% 42px;
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  #szoveg {
+    max-width: 790px;
+  }
+  
+  #udvozles {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  #udvozles span {
+    width: 38px;
+    height: 4px;
+    background: var(--red);
+  }
+  
+  h1 {
+    margin: 0 0 13px;
+    color: #26090a;
+    font-size: 85px;
+    line-height: 1;
+  }
+  
+  h1 span {
+    color: var(--red);
+  }
+  
+  #bevezeto {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  
+  #bevezeto p {
+    margin-bottom: 15px;
+  }
+  
+  #kiemelt {
+    font-weight: bold;
+  }
+  
+  #gomb {
+    margin-top: 11px;
+    min-height: 60px;
+    width: 374px;
+    padding: 13px 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(105deg, #a72b30, #a71e27);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  
+  #gomb:hover {
+    transform: translateY(-3px);
+    background: #8d2027;
+  }
+  
+  #mancs {
+    width: 31px;
+    height: 31px;
+    fill: white;
+  }
+  
+  #nyil {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  #kutya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #kutya img {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+  }
+  
+  /* Mobiltelefonos megjelenés */
+  
+  @media (max-width: 760px) {
+  
+    header {
+        top: 14px;
+        left: 28px;
+    }
+  
+    header img {
+        width: 145px;
+    }
+  
+    main {
+        padding: 100px 28px 35px 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+  
+    h1 {
+        font-size: 65px;
+    }
+  
+    #bevezeto {
+        font-size: 16px;
+    }
+  
+    #gomb {
+        width: 100%;
+        max-width: 380px;
+        font-size: 18px;
+    }
+  
+    #kutya {
+        margin-top: 20px;
+    }
+  
+    #kutya img {
+        width: 100%;
+        max-width: 550px;
+    }
+  }
+
+
+/* ===== PETCARE MICRO ANIMATIONS ===== */
+
+/* Betöltési animáció */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    to {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+@keyframes dogFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Oldalsó piros csík */
+#csik {
+    animation: slideDown 1s ease-out both;
+}
+
+/* Logó */
+header {
+    animation: fadeUp 0.8s ease-out 0.1s both;
+}
+
+/* Szöveges tartalom */
+#szoveg {
+    animation: fadeUp 0.9s ease-out 0.2s both;
+}
+
+#udvozles {
+    animation: fadeUp 0.7s ease-out 0.3s both;
+}
+
+h1 {
+    animation: fadeUp 0.8s ease-out 0.4s both;
+}
+
+#bevezeto {
+    animation: fadeUp 0.9s ease-out 0.55s both;
+}
+
+#gomb {
+    animation: fadeUp 0.8s ease-out 0.75s both;
+}
+
+/* Kutya finom lebegése */
+#kutya {
+    animation: fadeUp 1s ease-out 0.4s both;
+}
+
+
+/* Gomb interakció */
+#gomb {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#gomb:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(167, 30, 39, 0.18);
+}
+
+#gomb:hover #nyil {
+    transform: translateX(5px);
+}
+
+#nyil {
+    transition: transform 0.3s ease;
+}
+
+/* Logó interakció */
+header img {
+    transition: transform 0.3s ease;
+}
+
+header a:hover img {
+    transform: scale(1.04);
+}
+
+/* MODAL HÁTTÉR */
+
+.modal-hatter {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+    z-index: 1000;
+
+    padding: 15px;
+}
+
+.modal-hatter.aktiv {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* MODAL ABLAK */
+
+.modal-doboz {
+    position: relative;
+    background: #fbf6f2;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 35px;
+    border-radius: 20px;
+
+    text-align: center;
+
+    transform: translateY(30px) scale(0.95);
+    transition: 0.3s ease;
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-hatter.aktiv .modal-doboz {
+    transform: translateY(0) scale(1);
+}
+
+
+/* LOGÓ */
+
+.modal-doboz img {
+    width: 150px;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+
+/* CÍMEK */
+
+.modal-doboz h2 {
+    font-size: 30px;
+    color: #260d0d;
+    margin-bottom: 10px;
+}
+
+.modal-doboz h2 span {
+    color: #cf202e;
+}
+
+.modal-doboz p {
+    color: #555;
+}
+
+
+/* INPUT MEZŐK */
+
+.modal-doboz input {
+    width: 100%;
+    padding: 14px;
+    margin: 9px 0;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    outline: none;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.modal-doboz input:focus {
+    border-color: #cf202e;
+    box-shadow: 0 0 5px rgba(207, 32, 46, 0.2);
+}
+
+
+/* GOMBOK */
+
+.modal-doboz form button {
+    width: 100%;
+    padding: 14px;
+
+    margin-top: 15px;
+
+    background: #a72b30;
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-doboz form button:hover {
+    background: #801c23;
+    transform: translateY(-2px);
+}
+
+
+/* REGISZTRÁCIÓ / BEJELENTKEZÉS VÁLTÁS */
+
+.valtogatas {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.valtogatas a {
+    color: #cf202e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.valtogatas a:hover {
+    text-decoration: underline;
+}
+
+
+/* BEZÁRÁS */
+
+.bezaras {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+
+    border: none;
+    background: none;
+
+    font-size: 30px;
+    color: #a72b30;
+
+    cursor: pointer;
+}
+
+
+/* ELREJTÉS */
+
+.rejtett {
+    display: none;
+}
+
+
+/* MOBILNÉZET */
+
+@media (max-width: 480px) {
+
+    .modal-doboz {
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+
+    .modal-doboz h2 {
+        font-size: 25px;
+    }
+
+    .modal-doboz img {
+        width: 125px;
+    }
+
+}
+

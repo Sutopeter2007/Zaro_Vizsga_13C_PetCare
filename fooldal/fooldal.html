@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fbf6f2">
+    <meta name="description" content="PetCare - Gondoskodás egyszerűen">
+
+    <title>PetCare – Gondoskodás egyszerűen</title>
+
+    <link rel="stylesheet" href="/fooldal/fooldal.css">
+    <script src="fooldal.js" defer></script>
+</head>
+
+<body>
+
+    <div id="csik"></div>
+
+    <header>
+        <a href="#home">
+            <img src="/fooldal/kepek_fooldal/Logo.png" alt="PetCare logó">
+        </a>
+    </header>
+
+    <main id="home">
+
+        <section id="szoveg">
+
+            <div id="udvozles">
+                <span></span>
+                Üdvözöl a
+            </div>
+
+            <h1>
+                Pet<span>Care</span>
+            </h1>
+
+            <div id="bevezeto">
+
+                <p id="kiemelt">
+                    A PetCare azért jött létre, hogy segítsünk a gazdiknak
+                    kedvenceik mindennapi gondozásában, és egyszerűbbé
+                    tegyük a felelős kutyatartást.
+                </p>
+
+                <p>
+                    Weboldalunkon lehetőséged van saját kutyád adatlapjának
+                    létrehozására, ahol megadhatod kedvenced legfontosabb
+                    adatait, például a nevét, korát, fajtáját és testsúlyát.
+                </p>
+
+                <p>
+                    A megadott információk alapján a PetCare segítséget
+                    nyújt abban, hogy megtudd, mennyi táplálékra lehet
+                    szüksége kutyádnak, valamint figyelemmel kísérheted
+                    a fontosabb teendőket is.
+                </p>
+
+                <p>
+                    Célunk, hogy minden gazdi számára egy könnyen
+                    használható, átlátható és hasznos felületet biztosítsunk,
+                    ahol kedvence gondozásához minden fontos információt
+                    egy helyen találhat meg.
+                </p>
+
+            </div>
+
+            <button id="gomb" onclick="modalNyitas('login')">
+                Bejelentkezés
+
+                <svg id="nyil" viewBox="0 0 24 24">
+                    <path d="M4 12h15M13 5l7 7-7 7"/>
+                </svg>
+            </button>
+
+        </section>
+
+        <section id="kutya">
+            <img src="/fooldal/kepek_fooldal/hero-dog.png" alt="Golden retriever kutya">
+        </section>
+
+
+
+
+
+
+
+
+        
+       
+
+    </main>
+
+
+    <!-- BEJELENTKEZÉS ÉS REGISZTRÁCIÓ MODAL -->
+
+    <div class="modal-hatter" id="modalHatter"
+         onclick="hatterZaras(event)">
+
+        <div class="modal-doboz">
+
+            <button class="bezaras"
+                    type="button"
+                    onclick="modalZaras()"
+                    aria-label="Bezárás">×</button>
+
+
+            <!-- BEJELENTKEZÉS -->
+
+            <div id="login">
+
+                <img src="/fooldal/kepek_fooldal/Logo.png" alt="PetCare logó">
+
+                <h2>ÜDV <span>ÚJRA!</span></h2>
+
+                <p>Örülünk, hogy újra itt vagy!</p>
+
+                <form id="loginForm">
+
+                    <input
+                        type="email"
+                        placeholder="E-mail cím"
+                        autocomplete="email"
+                        required>
+
+                    <input
+                        type="password"
+                        placeholder="Jelszó"
+                        autocomplete="current-password"
+                        required>
+
+                    <button type="submit">
+                        Bejelentkezés
+                    </button>
+
+                </form>
+
+                <p class="valtogatas">
+                    Nincs még fiókod?
+
+                    <a href="#" onclick="modalValtas('register'); return false;">
+                        Regisztrálj most!
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- REGISZTRÁCIÓ -->
+
+            <div id="register" class="rejtett">
+
+                <img src="/fooldal/kepek_fooldal/Logo.png" alt="PetCare logó">
+
+                <h2>REGISZTRÁCIÓ</h2>
+
+                <p>Hozd létre saját PetCare-fiókodat!</p>
+
+                <form id="registerForm">
+
+                    <input
+                        type="text"
+                        placeholder="Teljes név"
+                        autocomplete="name"
+                        required>
+
+                    <input
+                        type="email"
+                        placeholder="E-mail cím"
+                        autocomplete="email"
+                        required>
+
+                    <input
+                        type="password"
+                        placeholder="Jelszó"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required>
+
+                    <input
+                        type="password"
+                        placeholder="Jelszó megerősítése"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required>
+
+                    <button type="submit">
+                        Regisztráció
+                    </button>
+
+                </form>
+
+                <p class="valtogatas">
+                    Már van fiókod?
+
+                    <a href="#" onclick="modalValtas('login'); return false;">
+                        Jelentkezz be!
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

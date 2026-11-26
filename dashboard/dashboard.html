@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fbf6f2">
+
+    <title>PetCare – Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- PETCARE OLDALSÓ NAVBAR -->
+
+    <aside class="sidebar" aria-label="Navigáció">
+
+        <a class="nav-item" href="/fooldal/fooldal.html">
+            <span class="nav-icon">
+                <img src="/ikonok/white_home.png" alt="">
+            </span>
+            <span class="nav-label">Kezdőlap</span>
+        </a>
+
+        <a class="nav-item" href="/terkep/terkep.html">
+            <span class="nav-icon">
+                <img src="/ikonok/white_map.png" alt="">
+            </span>
+            <span class="nav-label">Térkép</span>
+        </a>
+
+        <a class="nav-item" href="/tudastar/tudastar.html">
+            <span class="nav-icon">
+                <img src="/ikonok/white_book-bookmark.png" alt="">
+            </span>
+            <span class="nav-label">Tudástár</span>
+        </a>
+
+        <a class="nav-item active" href="/dashboard/dashboard.html">
+            <span class="nav-icon">🐾</span>
+            <span class="nav-label">Kutyáim</span>
+        </a>
+
+    </aside>
+
+
+    <!-- FEJLÉC -->
+
+    <header class="fejlec">
+
+        <a href="/fooldal/fooldal.html">
+            <img src="/fooldal/kepek_fooldal/Logo.png" alt="PetCare logó">
+        </a>
+
+        <div class="profil-ikon">
+            👤
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+
+    <main class="dashboard">
+
+        <section class="bevezeto">
+
+            <div>
+                <span class="felirat">SZEMÉLYES VEZÉRLŐPULT</span>
+
+                <h1>Üdv újra, <span>Gazdi!</span></h1>
+
+                <p>
+                    Kedvenced legfontosabb adatai és teendői egy helyen.
+                </p>
+            </div>
+
+            <button class="hozzaad-gomb" id="ujKutyaGomb">
+                + Új kedvenc
+            </button>
+
+        </section>
+
+
+        <!-- FELSŐ KÁRTYÁK -->
+
+        <section class="felso-racs">
+
+
+            <!-- KUTYA PROFIL -->
+
+            <article class="profil-kartya">
+
+                <div class="kutya-kep">
+
+                    <img src="../fooldal/kepek_fooldal/hero-dog.png"
+                         alt="Buddy kutya">
+
+                    <button class="szerkesztes-ikon" id="szerkesztesGomb">
+                        ✎
+                    </button>
+
+                    <div class="kutya-nev">
+                        🐾 <span id="kutyaNev">Buddy</span>
+                    </div>
+
+                </div>
+
+
+                <div class="profil-gombok">
+
+                    <button id="mentesGomb" class="mentes-gomb">
+                        ✓ Mentve
+                    </button>
+
+                    <button id="ujKutyaGomb2" class="kutya-gomb">
+                        🐾 Több kutya
+                    </button>
+
+                    <button id="szerkesztesGomb2">
+                        ✎ Szerkesztés
+                    </button>
+
+                    <button id="torlesGomb">
+                        🗑 Törlés
+                    </button>
+
+                    <button id="megosztasGomb">
+                        ↗ Megosztás
+                    </button>
+
+                    <button id="reszletekGomb">
+                        ⓘ Részletek
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- KUTYA ADATAI -->
+
+            <article class="kartya kutya-adatok">
+
+                <h2>🐾 Kutya profil</h2>
+
+                <form id="kutyaForm">
+
+                    <label for="nev">Kutya neve *</label>
+                    <input type="text" id="nev" value="Buddy" required>
+
+                    <label for="fajta">Kutya faja *</label>
+                    <select id="fajta">
+                        <option value="Kutya">Kutya</option>
+                        <option value="Macska">Macska</option>
+                    </select>
+
+                    <label for="fajtaNev">Fajta</label>
+                    <input type="text" id="fajtaNev" value="Golden Retriever">
+
+                    <label for="suly">Súly (kg) *</label>
+                    <input type="number" id="suly" value="32.5" min="0.1" step="0.1" required>
+
+                    <label for="kor">Kor</label>
+                    <input type="number" id="kor" value="3" min="0">
+
+                    <button type="submit" class="mentes">
+                        Adatok mentése
+                    </button>
+
+                </form>
+
+            </article>
+
+
+            <!-- OLTÁSOK -->
+
+            <article class="kartya oltas-kartya">
+
+                <h2>💉 Oltások</h2>
+
+                <label for="oltasokSzama">Oltások száma</label>
+
+                <select id="oltasokSzama">
+                    <option>1 alkalom</option>
+                    <option>2 alkalom</option>
+                    <option>3 alkalom</option>
+                    <option>4 alkalom</option>
+                    <option selected>5 alkalom</option>
+                    <option>6 alkalom</option>
+                    <option>7 alkalom</option>
+                    <option>8 alkalom</option>
+                </select>
+
+                <label for="utolsoOltas">Utolsó oltás dátuma</label>
+
+                <input type="date" id="utolsoOltas" value="2026-11-20">
+
+                <div class="kovetkezo-oltas">
+
+                    <span>📅 Következő oltás időpontja</span>
+
+                    <strong id="kovetkezoDatum">2027.11.20.</strong>
+
+                    <small id="hatraLevo">Még 359 nap</small>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- ALSÓ KÁRTYÁK -->
+
+        <section class="also-racs">
+
+
+            <!-- KOZMETIKUS -->
+
+            <article class="kartya idopont-kartya">
+
+                <h2>📅 Kozmetikus időpont</h2>
+
+                <label for="kozmetikusDatum">Időpont</label>
+
+                <input type="datetime-local" id="kozmetikusDatum">
+
+                <button id="idopontMentes" class="mentes">
+                    Időpont mentése
+                </button>
+
+                <p id="idopontUzenet"></p>
+
+            </article>
+
+
+            <!-- EMLÉKEZTETŐ -->
+
+            <article class="kartya emlekezteto-kartya">
+
+                <h2>🐾 Jelzés a következő oltásra</h2>
+
+                <label class="kapcsolo">
+
+                    <input type="checkbox" id="emlekezteto" checked>
+
+                    <span>
+                        Emlékeztető küldése e-mailben / értesítésben
+                    </span>
+
+                </label>
+
+                <p id="emlekeztetoUzenet">
+                    Az emlékeztető aktív.
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- TOVÁBBI INFORMÁCIÓK -->
+
+        <section class="statisztika">
+
+            <h2>Kedvenced állapota</h2>
+
+            <div class="statisztika-racs">
+
+                <div class="statisztika-kartya">
+                    <span>⚖️</span>
+                    <div>
+                        <small>Testsúly</small>
+                        <strong id="sulyAdat">32.5 kg</strong>
+                    </div>
+                </div>
+
+                <div class="statisztika-kartya">
+                    <span>💉</span>
+                    <div>
+                        <small>Rögzített oltások</small>
+                        <strong id="oltasAdat">5 alkalom</strong>
+                    </div>
+                </div>
+
+                <div class="statisztika-kartya">
+                    <span>🎂</span>
+                    <div>
+                        <small>Életkor</small>
+                        <strong id="korAdat">3 év</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <img src="/fooldal/kepek_fooldal/Logo.png" alt="PetCare">
+
+            <p>Gondoskodás egyszerűen. 🐾</p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ÚJ KEDVENC MODAL -->
+
+    <div class="modal-hatter" id="kutyaModal">
+
+        <div class="modal-doboz">
+
+            <button class="bezaras" id="modalBezaras">×</button>
+
+            <h2>Új kedvenc hozzáadása</h2>
+
+            <p>Add meg az új családtagod adatait!</p>
+
+            <form id="ujKutyaForm">
+
+                <input type="text" id="ujNev"
+                       placeholder="Kedvenc neve" required>
+
+                <select id="ujFaj">
+                    <option value="Kutya">Kutya</option>
+                    <option value="Macska">Macska</option>
+                </select>
+
+                <input type="text" id="ujFajta"
+                       placeholder="Fajta">
+
+                <input type="number" id="ujSuly"
+                       placeholder="Testsúly (kg)" min="0.1" step="0.1">
+
+                <button type="submit" class="mentes">
+                    Kedvenc hozzáadása
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
